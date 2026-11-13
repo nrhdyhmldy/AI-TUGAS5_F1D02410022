@@ -1,0 +1,35 @@
+{
+  "judul": "Evaluasi kesesuaian lahan untuk tanaman kopi arabika",
+  "batas": "Ambang kelas elevasi, suhu, lereng, dan pH mengikuti S1 (Wardani dkk. 2024, Tabel 2, kopi arabika). S2 (Syahrul dkk.) memakai kriteria FAO dengan ambang berbeda (mis. suhu S1 16–22 °C, pH S1 5,6–6,6), sehingga tidak dipakai untuk ambang kelas; S2 dipakai untuk metode faktor pembatas (kelas terburuk) dan rekomendasi perbaikan: naungan untuk suhu, teras untuk lereng >8%, serbuk belerang untuk pH tinggi. Hanya 4 faktor yang dicakup (elevasi, suhu, lereng, pH); faktor lain pada jurnal (curah hujan, bulan kering, kedalaman efektif, tekstur, drainase, bahaya erosi, C-organik, dll.) tidak dicakup.",
+  "sumber": {
+    "S1": "Wardani, N. R., Putra, D. F., & Supriyanto, A. Evaluasi Kesesuaian Lahan Kopi di Wilayah Giripurno Kota Batu Jawa Timur, Jurnal Swarnabhumi Vol. 9 No. 1 Agustus 2024 (Tabel 2: kriteria teknis kesesuaian lahan kopi, modifikasi Djaenudin dkk. 2011 dan Ditjenbun 2014), https://jurnal.univpgri-palembang.ac.id/index.php/swarna/article/view/10961/8701",
+    "S2": "Syahrul, Amir, & Saida. Evaluasi Kesesuaian Lahan untuk Pengembangan Tanaman Kopi Arabika (Coffea arabica L.) di Kecamatan Bungaya, Kabupaten Gowa, Jurnal AGrotekMAS, Fakultas Pertanian UMI Makassar (metode FAO, pendekatan faktor pembatas), https://jurnal.fp.umi.ac.id/index.php/agrotekmas/article/download/191/167"
+  },
+  "aturan": [
+    {"id": "R1", "jika": ["elevasi 1.000–1.500 mdpl", "elevasi 850–1.000 atau 1.500–1.750 mdpl"], "mode": "atau", "maka": "elevasi tidak lebih buruk dari S2", "sumber": ["S1"]},
+    {"id": "R2", "jika": ["suhu 20–24 °C", "suhu 24–28 °C"], "mode": "atau", "maka": "suhu tidak lebih buruk dari S2", "sumber": ["S1"]},
+    {"id": "R3", "jika": ["lereng 0–8%", "lereng 8–25%", "lereng 25–45%"], "mode": "atau", "maka": "lereng tidak lebih buruk dari S3", "sumber": ["S1"]},
+    {"id": "R4", "jika": ["pH tanah 5,5–6,0", "pH tanah 5,0–5,4 atau 6,1–7,0", "pH tanah 4,0–4,9 atau 7,1–8,0"], "mode": "atau", "maka": "pH tidak lebih buruk dari S3", "sumber": ["S1"]},
+    {"id": "R5", "jika": ["lereng 0–8%", "lereng 8–25%"], "mode": "atau", "maka": "lereng tidak lebih buruk dari S2", "sumber": ["S1"]},
+    {"id": "R6", "jika": ["pH tanah 5,5–6,0", "pH tanah 5,0–5,4 atau 6,1–7,0"], "mode": "atau", "maka": "pH tidak lebih buruk dari S2", "sumber": ["S1"]},
+    {"id": "R7", "jika": ["elevasi tidak lebih buruk dari S2", "suhu tidak lebih buruk dari S2", "lereng tidak lebih buruk dari S2", "pH tidak lebih buruk dari S2"], "mode": "dan", "maka": "semua faktor tidak lebih buruk dari S2", "sumber": ["S1", "S2"]},
+    {"id": "R8", "jika": ["lereng tidak lebih buruk dari S3", "pH tidak lebih buruk dari S3"], "mode": "dan", "maka": "lereng dan pH tidak lebih buruk dari S3", "sumber": ["S1", "S2"]},
+    {"id": "R9", "jika": ["elevasi tidak lebih buruk dari S2", "suhu tidak lebih buruk dari S2", "lereng dan pH tidak lebih buruk dari S3"], "mode": "dan", "maka": "semua faktor tidak lebih buruk dari S3", "sumber": ["S1", "S2"]},
+    {"id": "R10", "jika": ["elevasi 1.000–1.500 mdpl", "elevasi 850–1.000 atau 1.500–1.750 mdpl"], "mode": "tidak", "maka": "elevasi di luar kisaran S1–S2", "sumber": ["S1"]},
+    {"id": "R11", "jika": ["suhu 20–24 °C", "suhu 24–28 °C"], "mode": "tidak", "maka": "suhu di luar kisaran S1–S2", "sumber": ["S1"]},
+    {"id": "R12", "jika": ["lereng 0–8%", "lereng 8–25%", "lereng 25–45%"], "mode": "tidak", "maka": "lereng tidak sesuai (N)", "sumber": ["S1"]},
+    {"id": "R13", "jika": ["pH tanah 5,5–6,0", "pH tanah 5,0–5,4 atau 6,1–7,0", "pH tanah 4,0–4,9 atau 7,1–8,0"], "mode": "tidak", "maka": "pH tidak sesuai (N)", "sumber": ["S1"]},
+    {"id": "R14", "jika": ["elevasi 850–1.000 atau 1.500–1.750 mdpl", "suhu 24–28 °C", "lereng 8–25%", "pH tanah 5,0–5,4 atau 6,1–7,0"], "mode": "atau", "maka": "ada faktor berkelas S2", "sumber": ["S1"]},
+    {"id": "R15", "jika": ["lereng 25–45%", "pH tanah 4,0–4,9 atau 7,1–8,0"], "mode": "atau", "maka": "ada faktor berkelas S3", "sumber": ["S1"]},
+    {"id": "R16", "jika": ["elevasi 1.000–1.500 mdpl", "suhu 20–24 °C", "lereng 0–8%", "pH tanah 5,5–6,0"], "mode": "dan", "maka": "semua faktor berkelas S1", "sumber": ["S1"]},
+    {"id": "R17", "jika": ["elevasi di luar kisaran S1–S2", "suhu di luar kisaran S1–S2"], "mode": "atau", "maka": "elevasi atau suhu di luar kisaran S1–S2", "sumber": ["S1"]},
+    {"id": "R18", "jika": ["semua faktor berkelas S1"], "mode": "dan", "maka": "LAHAN SANGAT SESUAI (S1) UNTUK KOPI ARABIKA", "sumber": ["S1", "S2"]},
+    {"id": "R19", "jika": ["ada faktor berkelas S2", "semua faktor tidak lebih buruk dari S2"], "mode": "dan", "maka": "LAHAN CUKUP SESUAI (S2) UNTUK KOPI ARABIKA", "sumber": ["S1", "S2"]},
+    {"id": "R20", "jika": ["ada faktor berkelas S3", "semua faktor tidak lebih buruk dari S3"], "mode": "dan", "maka": "LAHAN SESUAI MARGINAL (S3): BUDIDAYA KOPI ARABIKA PERLU PERBAIKAN", "sumber": ["S1", "S2"]},
+    {"id": "R21", "jika": ["elevasi atau suhu di luar kisaran S1–S2", "lereng dan pH tidak lebih buruk dari S3"], "mode": "dan", "maka": "LAHAN SESUAI MARGINAL (S3) ATAU TIDAK SESUAI (N): ELEVASI/SUHU DI LUAR KISARAN S1–S2, CEK RENTANG S3 PADA JURNAL", "sumber": ["S1"]},
+    {"id": "R22", "jika": ["lereng tidak sesuai (N)", "pH tidak sesuai (N)"], "mode": "atau", "maka": "LAHAN TIDAK SESUAI (N) UNTUK KOPI ARABIKA", "sumber": ["S1"]},
+    {"id": "R23", "jika": ["suhu 24–28 °C"], "mode": "dan", "maka": "REKOMENDASI: BERI NAUNGAN (POHON PENAUNG) KARENA SUHU DI ATAS KISARAN IDEAL", "sumber": ["S2"]},
+    {"id": "R24", "jika": ["lereng 8–25%", "lereng 25–45%", "lereng tidak sesuai (N)"], "mode": "atau", "maka": "REKOMENDASI: BUAT TERAS UNTUK MENGURANGI EROSI PADA LERENG", "sumber": ["S1", "S2"]},
+    {"id": "R25", "jika": ["pH tanah 4,0–4,9 atau 7,1–8,0"], "mode": "dan", "maka": "REKOMENDASI: BILA pH TERLALU TINGGI (7,1–8,0), TURUNKAN pH DENGAN SERBUK BELERANG", "sumber": ["S2"]}
+  ]
+}
