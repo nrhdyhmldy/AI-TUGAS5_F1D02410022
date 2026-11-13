@@ -29,8 +29,8 @@ Program menanyakan 10 fakta dasar dengan jawaban `y` (ya) atau `t` (tidak). Sete
 
 | Kode | Judul | Penerbit | URL | Tanggal akses |
 |---|---|---|---|---|
-| S1 | Evaluasi Kesesuaian Lahan Kopi di Wilayah Giripurno Kota Batu Jawa Timur (Wardani, N. R., Putra, D. F., & Supriyanto, A.), Vol. 9 No. 1, Agustus 2024 | Jurnal Swarnabhumi (Universitas PGRI Palembang) | https://jurnal.univpgri-palembang.ac.id/index.php/swarna/article/view/10961/8701 | [isi tanggal akses] |
-| S2 | Evaluasi Kesesuaian Lahan untuk Pengembangan Tanaman Kopi Arabika (Coffea arabica L.) di Kecamatan Bungaya, Kabupaten Gowa (Syahrul, Amir, & Saida) | Jurnal AGrotekMAS, Fakultas Pertanian UMI Makassar | https://jurnal.fp.umi.ac.id/index.php/agrotekmas/article/download/191/167 | [isi tanggal akses] |
+| S1 | Evaluasi Kesesuaian Lahan Kopi di Wilayah Giripurno Kota Batu Jawa Timur (Wardani, N. R., Putra, D. F., & Supriyanto, A.), Vol. 9 No. 1, Agustus 2024 | Jurnal Swarnabhumi (Universitas PGRI Palembang) | https://jurnal.univpgri-palembang.ac.id/index.php/swarna/article/view/10961/8701 | [10 November 2026] |
+| S2 | Evaluasi Kesesuaian Lahan untuk Pengembangan Tanaman Kopi Arabika (Coffea arabica L.) di Kecamatan Bungaya, Kabupaten Gowa (Syahrul, Amir, & Saida) | Jurnal AGrotekMAS, Fakultas Pertanian UMI Makassar | https://jurnal.fp.umi.ac.id/index.php/agrotekmas/article/download/191/167 | [10 November 2026] |
 
 Pembagian peran sumber: ambang kelas elevasi, suhu, lereng, dan pH mengikuti S1 (Tabel 2, kopi arabika). S2 dipakai untuk metode faktor pembatas (kelas terburuk) dan rekomendasi perbaikan (naungan, teras, serbuk belerang).
 
